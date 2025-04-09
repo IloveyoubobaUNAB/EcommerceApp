@@ -22,24 +22,33 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+
             EcommerceAppTheme {
 
-                val myNavController = rememberNavController()
-                val strartDestination = "login"
+                val mynavController = rememberNavController()
+                val startDestination = "login"
 
                 NavHost(
-                    navController = myNavController,
-                    startDestination = strartDestination,
+                    navController = mynavController,
+                    startDestination = startDestination,
                     modifier = Modifier.fillMaxSize()
+
                 ){
-                    composable("login"){
-                        LoginScreen(myNavController)
-                    }
-                    composable("register"){
-                        RegisterScreen()
-                    }
+                    composable("login") { LoginScreen(mynavController)  }
+                    composable("register") { RegisterScreen(mynavController)  }
+
                 }
+
+
+
+
+
+
+
+
+
             }
         }
     }
 }
+

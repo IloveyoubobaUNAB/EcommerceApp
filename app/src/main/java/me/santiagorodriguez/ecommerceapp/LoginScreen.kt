@@ -51,7 +51,8 @@ fun LoginScreen(navController: NavController) {
                 modifier = Modifier.size(200.dp)
             )
             Spacer(modifier = Modifier.height(32.dp))
-            Text(text =  "Iniciar Sesión",
+            Text(
+                text = "Iniciar Sesión",
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color(0xFFFF9900)
@@ -89,32 +90,28 @@ fun LoginScreen(navController: NavController) {
                     )
                 },
                 shape = RoundedCornerShape(12.dp)
+
             )
             Spacer(modifier = Modifier.height(24.dp))
-
             Button(
                 onClick = {},
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFFFF9900)
-                ),
-                modifier = Modifier.fillMaxWidth().height(50.dp)
-            ) {
-                Text(text = "Iniciar Sesión",
-                    fontSize = 16.sp
-                )
-            }
-
+                    containerColor = Color(0xFFFF9900)), modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp)
+            ) { Text("Iniciar Sesion", fontSize = 16.sp) }
             Spacer(modifier = Modifier.height(24.dp))
-            TextButton(onClick = {}) {
-                navController.navigate("register")
-                Text(
-                    text = "¿No tienes una cuenta?, Regístrate",
-                    color = Color(0xFFFF9900)
-                )
-            }
+            TextButton(onClick = {
+                if (navController!= null){
+                    navController.navigate("register")
+                }
+
+
+            }) { Text(text = "No tienes una cuenta? Registrate", color = Color(0xFFFF9900) )}
         }
     }
 }
+
 @Preview
 @Composable
 fun LoginScreenPreview() {
