@@ -33,19 +33,14 @@ class MainActivity : ComponentActivity() {
                     startDestination = startDestination,
                     modifier = Modifier.fillMaxSize()
 
-                ){
-                    composable("login") { LoginScreen(mynavController)  }
-                    composable("register") { RegisterScreen(mynavController)  }
-
+                ) {
+                    composable("login") {
+                        LoginScreen(mynavController) }
+                    composable("register") {
+                        RegisterScreen(mynavController) }
+                    composable("home") {
+                        HomeScreen() }
                 }
-
-
-
-
-
-
-
-
 
             }
         }
